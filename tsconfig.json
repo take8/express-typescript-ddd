@@ -1,0 +1,26 @@
+
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [ "es2015" ],
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    // "paths": {
+    //   "*": [
+    //     "node_modules/*",
+    //     "src/types/*"
+    //   ]
+    // },
+    "allowJs": true,
+    // TODO: JsDocの型チェックをできる
+    // "checkJs": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
