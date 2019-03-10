@@ -2,7 +2,7 @@
 
 ## 概要
 
-Node.js + Expressのサーバ構築の際にDDDで実装したいと思い、
+Node.js + Expressのサーバ構築の際にDDDで実装したいと思い、  
 そうするとデータ型やinterfaceがあるTypeScriptの方がよさそう、
 ということで作ってみたときのテンプレートです。
 
@@ -27,9 +27,18 @@ https://github.com/joshuaalpuerto/node-ddd-boilerplate
 
 ### クライアント
 
-* JavaScript
+* JavaScript (予定)
 
-## 環境構築手順
+## 環境構築手順
+
+```sh
+npm install
+npm run build && npm start
+```
+
+Access to http://localhost:3000/
+
+## このリポジトリの作り方(メモ)
 
 ```sh
 express --pug {project_name}
@@ -37,3 +46,5 @@ express --pug {project_name}
 cd {project_name}
 git init
 ```
+
+あとはコミット履歴を参照。
