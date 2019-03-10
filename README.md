@@ -8,8 +8,8 @@ Node.js + Expressのサーバ構築の際にDDDで実装したいと思い、
 
 ## 参考
 
-https://github.com/Microsoft/TypeScript-Node-Starter
-https://github.com/joshuaalpuerto/node-ddd-boilerplate
+* https://github.com/Microsoft/TypeScript-Node-Starter
+* https://github.com/joshuaalpuerto/node-ddd-boilerplate
 
 ## アーキテクチャ
 
