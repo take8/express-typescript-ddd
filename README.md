@@ -48,3 +48,7 @@ git init
 ```
 
 あとはコミット履歴を参照。
+
+### bootstrap の追加
+
+`bootstrap`ブランチを参照

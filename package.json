@@ -19,12 +19,15 @@
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run serve-debug\""
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
+    "jquery": "^3.4.1",
     "log4js": "^4.3.1",
     "morgan": "~1.9.0",
+    "popper.js": "^1.15.0",
     "pug": "^2.0.3"
   },
   "devDependencies": {

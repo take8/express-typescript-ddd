@@ -20,8 +20,14 @@ app.set("view engine", "pug");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 
+// static files
+app.use(express.static(path.join(__dirname, "public")));
+// Access to node_modules
+// TODO: Danger?
+app.use("/node_modules", express.static(path.join(__dirname, "../node_modules")));
+
+// routing
 app.use("/", routes);
 
 // catch 404 and forward to error handler
