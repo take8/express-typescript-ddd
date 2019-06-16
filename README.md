@@ -2,32 +2,32 @@
 
 ## 概要
 
-Node.js + Expressのサーバ構築の際にDDDで実装したいと思い、  
-そうするとデータ型やinterfaceがあるTypeScriptの方がよさそう、
+Node.js + Express のサーバ構築の際に DDD で実装したいと思い、  
+そうするとデータ型や interface がある TypeScript の方がよさそう、
 ということで作ってみたときのテンプレートです。
 
 ## 参考
 
-* https://github.com/Microsoft/TypeScript-Node-Starter
-* https://github.com/joshuaalpuerto/node-ddd-boilerplate
+- https://github.com/Microsoft/TypeScript-Node-Starter
+- https://github.com/joshuaalpuerto/node-ddd-boilerplate
 
 ## アーキテクチャ
 
 ### 設計方針
 
-* DDD(ドメイン駆動設計)
+- DDD(ドメイン駆動設計)
 
 ### サーバー
 
-* Language: Node.js, TypeScript
-* Web Framework: Express
+- Language: Node.js, TypeScript
+- Web Framework: Express
 
-* DB: MySQL
-* ORM: Sequelize
+- DB: MySQL
+- ORM: Sequelize
 
 ### クライアント
 
-* JavaScript (予定)
+- JavaScript (予定)
 
 ## 環境構築手順
 

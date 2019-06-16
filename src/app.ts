@@ -31,7 +31,7 @@ app.use("/node_modules", express.static(path.join(__dirname, "../node_modules"))
 app.use("/", routes);
 
 // catch 404 and forward to error handler
-app.use(function(
+app.use(function (
   req: express.Request,
   res: express.Response,
   next: express.NextFunction
@@ -41,7 +41,7 @@ app.use(function(
 });
 
 // error handler
-app.use(function(
+app.use(function (
   err: any,
   req: express.Request,
   res: express.Response,
