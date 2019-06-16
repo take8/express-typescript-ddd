@@ -24,8 +24,10 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
+    "jquery": "^3.4.1",
     "log4js": "^4.3.1",
     "morgan": "~1.9.0",
+    "popper.js": "^1.15.0",
     "pug": "^2.0.3"
   },
   "devDependencies": {
