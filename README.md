@@ -36,7 +36,7 @@ npm install
 npm run build && npm start
 ```
 
-Access to http://localhost:3000/
+Access to http://localhost:3000/users
 
 ## このリポジトリの作り方(メモ)
 

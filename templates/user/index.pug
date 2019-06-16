@@ -1,0 +1,84 @@
+extends ../layout
+
+block head
+  link(rel="stylesheet", href="/css/navbar-top-fixed.css")
+
+block content
+  //- TODO: ナビゲーションメニューを別テンプレートにする
+  nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+    h1.d-none ナビゲーションメニュー
+
+    button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation")
+      span.navbar-toggler-icon
+    a.navbar-brand(href="#") Fixed navbar
+
+    div.collapse.navbar-collapse#navbarCollapse
+      ul.navbar-nav.mr-auto
+        //- TODO: "active"を切り替えるロジックが必要
+        li.nav-item.active
+          //- インライン要素は interpolation (#[ ... ]) だとすっきり書ける
+          a.nav-link(href="/") Home #[span.sr-only (current)]
+        li.nav-item
+          a.nav-link(href="/users") Users
+        li.nav-item
+          a.nav-link.disabled(href="#") Disabled
+
+      form.form-inline.mt-2.mt-md-0
+        input.form-control.mr-sm-2(type="text" placeholder="Search")
+        button.btn.btn-outline-success.my-2.my-sm-0(type="submit") Search
+
+  main
+    //- "="の後のテキストはエスケープされる
+    h1= title
+    //- p Welcome to #{title}
+
+    //- divは省略可能
+    .table-responsive
+      table.table.table-striped
+        thead
+          tr
+            th #
+            th 氏名
+            th 生年月日
+            th 組織
+            th 
+        tbody
+          tr
+            td 1,001
+            td 山田太郎
+            td 1999-11-22
+            td A社
+            td 
+              a.btn.btn-info(href="#").mr-1 Edit
+              a.btn.btn-danger(href="#") Delete
+          tr
+            td 1,002
+            td 鈴木次郎
+            td 2001-04-30
+            td B社
+            td 
+              a.btn.btn-info(href="#").mr-1 Edit
+              a.btn.btn-danger(href="#") Delete
+
+    //- TODO: tableタグを使わないようにしたい
+    //- //- divは省略可能
+    //- .container.c-table
+    //-   .row.c-table-header
+    //-     .col-3 氏名
+    //-     .col-3 生年月日
+    //-     .col-3 組織
+    //-     .col-3
+    //-   .row.c-table-row
+    //-     .col-3 Yamada Taro
+    //-     .col-3 1999-11-22
+    //-     .col-3 A company
+    //-     .col-3
+    //-       a.btn.btn-info(href="#").mr-1 Edit
+    //-       a.btn.btn-danger(href="#") Delete
+    //-   .row.c-table-row
+    //-     .col-3 Yamada Taro
+    //-     .col-3 1999-11-22
+    //-     .col-3 A company
+    //-     .col-3
+    //-       a.btn.btn-info(href="#").mr-1 Edit
+    //-       a.btn.btn-danger(href="#") Delete
