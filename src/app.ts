@@ -11,7 +11,7 @@ import routes from "./presentation/routes";
 const app = express();
 
 // view engine setup
-app.set("views", path.join(__dirname, "../views"));
+app.set("views", path.join(__dirname, "../templates"));
 app.set("view engine", "pug");
 
 // logger
