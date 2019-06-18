@@ -22,8 +22,32 @@ export let _new = (req: Request, res: Response, next: NextFunction) => {
 };
 
 /**
+ * Create user.
+ */
+export let create = (req: Request, res: Response, next: NextFunction) => {
+  // TODO:
+  res.redirect("/users");
+};
+
+/**
  * Render user form to update.
  */
 export let edit = (req: Request, res: Response, next: NextFunction) => {
   res.render("user/edit", { title: "User: yyyy" });
+};
+
+/**
+ * Update user.
+ */
+export let update = (req: Request, res: Response, next: NextFunction) => {
+  // TODO:
+  res.redirect("/users");
+};
+
+/**
+ * Delete user.
+ */
+export let _delete = (req: Request, res: Response, next: NextFunction) => {
+  // TODO:
+  res.redirect("/users");
 };

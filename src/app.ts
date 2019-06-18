@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import logger from "./infrastructure/logging/logger";
 
 // routing
+import methodOverride from "method-override"; // ルーティングの前に読み込む
 import routes from "./presentation/routes";
 
 const app = express();
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/node_modules", express.static(path.join(__dirname, "../node_modules")));
 
 // routing
+app.use(methodOverride("_method"));
 app.use("/", routes);
 
 // catch 404 and forward to error handler

@@ -11,7 +11,7 @@ block content
     h1= title
     hr
 
-    form(action="/users/update", method="put")
+    form(action="/users/1?_method=PUT", method="POST")
       div.form-row
         div.form-group.col-md-4
           label(for="inputUserName") Name

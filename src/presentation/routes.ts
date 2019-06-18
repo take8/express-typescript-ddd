@@ -14,10 +14,10 @@ router.get("/", callLog, rootController.index);
 
 router.get("/users", callLog, userController.index);
 router.get("/users/new", callLog, userController._new);
-router.post("/users/create", callLog, userController.create);
+router.post("/users", callLog, userController.create);
 router.get("/users/:id/edit", callLog, userController.edit);
-router.put("/users/:id/update", callLog, userController.update);
-router.delete("/users/:id/delete", callLog, userController._delete);
+router.put("/users/:id", callLog, userController.update);
+router.delete("/users/:id", callLog, userController._delete);
 router.get("/users/:id", callLog, userController.show);
 
 export default router;

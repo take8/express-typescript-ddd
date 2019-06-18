@@ -33,7 +33,8 @@ block content
             td 
               a.btn.btn-secondary(href="/users/1").mr-1 Show
               a.btn.btn-info(href="/users/1/edit").mr-1 Edit
-              a.btn.btn-danger(href="/users/1/delete") Delete
+              form(action="/users/1?_method=DELETE", method="POST")
+                button.btn.btn-danger(type="submit") Delete
           tr
             td 1,002
             td 鈴木次郎
@@ -42,7 +43,8 @@ block content
             td 
               a.btn.btn-secondary(href="/users/2").mr-1 Show
               a.btn.btn-info(href="/users/2/edit").mr-1 Edit
-              a.btn.btn-danger(href="/users/2/delete") Delete
+              form(action="/users/2?_method=DELETE", method="POST")
+                button.btn.btn-danger(type="submit") Delete
 
     //- TODO: tableタグを使わないようにしたい
     //- //- divは省略可能
