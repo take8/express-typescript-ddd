@@ -12,6 +12,7 @@ block content
     hr
 
     form(action="/users/1?_method=PUT", method="POST")
+      input(type="hidden", name="_csrf" value=csrfToken)
       div.form-row
         div.form-group.col-md-4
           label(for="inputUserName") Name

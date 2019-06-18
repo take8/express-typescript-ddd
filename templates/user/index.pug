@@ -34,6 +34,7 @@ block content
               a.btn.btn-secondary(href="/users/1").mr-1 Show
               a.btn.btn-info(href="/users/1/edit").mr-1 Edit
               form(action="/users/1?_method=DELETE", method="POST")
+                input(type="hidden", name="_csrf" value=csrfToken)
                 button.btn.btn-danger(type="submit") Delete
           tr
             td 1,002
@@ -44,6 +45,7 @@ block content
               a.btn.btn-secondary(href="/users/2").mr-1 Show
               a.btn.btn-info(href="/users/2/edit").mr-1 Edit
               form(action="/users/2?_method=DELETE", method="POST")
+                input(type="hidden", name="_csrf" value=csrfToken)
                 button.btn.btn-danger(type="submit") Delete
 
     //- TODO: tableタグを使わないようにしたい

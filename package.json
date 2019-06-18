@@ -21,8 +21,10 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "cookie-parser": "^1.4.4",
+    "csurf": "^1.10.0",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "express-session": "^1.16.2",
     "http-errors": "~1.6.2",
     "jquery": "^3.4.1",
     "log4js": "^4.3.1",
@@ -33,7 +35,9 @@
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.1",
+    "@types/csurf": "^1.9.35",
     "@types/express": "^4.17.0",
+    "@types/express-session": "^1.15.12",
     "@types/http-errors": "^1.6.1",
     "@types/jest": "^24.0.13",
     "@types/log4js": "^2.3.5",

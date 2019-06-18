@@ -1,7 +1,11 @@
 import createError from "http-errors";
 import express from "express";
 import path from "path";
+
 import cookieParser from "cookie-parser";
+import session from "express-session";
+import csrf from "csurf";
+
 // import logger from "morgan";
 import logger from "./infrastructure/logging/logger";
 
@@ -20,7 +24,19 @@ app.set("view engine", "pug");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// CSRF prevention
 app.use(cookieParser());
+app.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: "secret"
+}));
+app.use(csrf());
+app.use((req, res, next) => {
+  res.locals.csrfToken = req.csrfToken();
+  next();
+});
 
 // static files
 app.use(express.static(path.join(__dirname, "public")));
