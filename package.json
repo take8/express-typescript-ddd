@@ -26,6 +26,7 @@
     "http-errors": "~1.6.2",
     "jquery": "^3.4.1",
     "log4js": "^4.3.1",
+    "method-override": "^3.0.0",
     "morgan": "~1.9.0",
     "popper.js": "^1.15.0",
     "pug": "^2.0.3"
@@ -36,6 +37,7 @@
     "@types/http-errors": "^1.6.1",
     "@types/jest": "^24.0.13",
     "@types/log4js": "^2.3.5",
+    "@types/method-override": "0.0.31",
     "@types/morgan": "^1.7.35",
     "@types/node": "^10.14.8",
     "@types/shelljs": "^0.8.5",
