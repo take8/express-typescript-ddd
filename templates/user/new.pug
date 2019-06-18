@@ -1,0 +1,29 @@
+extends ../layout
+
+block head
+  link(rel="stylesheet", href="/css/navbar-top-fixed.css")
+
+block content
+  include ../shared/nav
+
+  main
+    //- "="の後のテキストはエスケープされる
+    h1= title
+    hr
+
+    form(action="/users/create", method="post")
+      div.form-row
+        div.form-group.col-md-4
+          label(for="inputUserName") Name
+          input#inputUserName.form-control(type="text", name="userName")
+      div.form-row
+        div.form-group.col-md-4
+          label(for="inputDateOfBirth") Date of birth
+          input#inputDateOfBirth.form-control(type="date", name="dateOfBirth")
+      div.form-row
+        div.form-group.col-md-4
+          label(for="inputOrganization") Organization
+          input#inputOrganization.form-control(type="text", name="organization")
+
+      div.my-2
+        button.btn.btn-primary(type="submit") Save

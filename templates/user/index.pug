@@ -9,8 +9,11 @@ block content
   main
     //- "="の後のテキストはエスケープされる
     h1= title
+    hr
     //- p Welcome to #{title}
 
+    div.mb-2
+      a.btn.btn-success(href="/users/new") New
     //- divは省略可能
     .table-responsive
       table.table.table-striped
@@ -28,16 +31,18 @@ block content
             td 1999-11-22
             td A社
             td 
-              a.btn.btn-info(href="#").mr-1 Edit
-              a.btn.btn-danger(href="#") Delete
+              a.btn.btn-secondary(href="/users/1").mr-1 Show
+              a.btn.btn-info(href="/users/1/edit").mr-1 Edit
+              a.btn.btn-danger(href="/users/1/delete") Delete
           tr
             td 1,002
             td 鈴木次郎
             td 2001-04-30
             td B社
             td 
-              a.btn.btn-info(href="#").mr-1 Edit
-              a.btn.btn-danger(href="#") Delete
+              a.btn.btn-secondary(href="/users/2").mr-1 Show
+              a.btn.btn-info(href="/users/2/edit").mr-1 Edit
+              a.btn.btn-danger(href="/users/2/delete") Delete
 
     //- TODO: tableタグを使わないようにしたい
     //- //- divは省略可能
