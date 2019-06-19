@@ -14,6 +14,10 @@ class UserService {
     return userRepository.findBy(identifier);
   }
 
+  startInput() {
+    return User.newInstance();
+  }
+
   create(user: User) {
     return userRepository.create(user);
   }

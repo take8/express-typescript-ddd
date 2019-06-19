@@ -14,9 +14,12 @@ block content
     form(action=`/users/${user.identifier().value()}?_method=PUT`, method="POST")
       input(type="hidden", name="_csrf" value=csrfToken)
       div.form-row
-        div.form-group.col-md-4
-          label(for="inputUserName") Name
-          input#inputUserName.form-control(type="text" name="userName" value=`${user.fullName()}`)
+        div.form-group.col-md-2
+          label(for="inputFirstName") FirstName
+          input#inputFirstName.form-control(type="text", name="firstName" value=`${user.firstName().value()}`)
+        div.form-group.col-md-2
+          label(for="inputLastName") LastName
+          input#inputLastName.form-control(type="text", name="lastName" value=`${user.lastName().value()}`)
       div.form-row
         div.form-group.col-md-4
           label(for="inputDateOfBirth") Date of birth

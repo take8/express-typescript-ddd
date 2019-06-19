@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import userService from "../../app/service/user_service";
+import userView from "../view/user/user_view";
 import { UserIdentifier } from "../../domain/model/user/user_identifier";
 
 /**
@@ -25,14 +26,17 @@ export let show = (req: Request, res: Response, next: NextFunction) => {
  * Render user form to create.
  */
 export let _new = (req: Request, res: Response, next: NextFunction) => {
-  res.render("user/new", { title: "New User" });
+  const user = userService.startInput();
+  res.render("user/new", { title: "New User", user: user });
 };
 
 /**
  * Create user.
  */
 export let create = (req: Request, res: Response, next: NextFunction) => {
-  // TODO:
+  // TODO: validation
+  const user = userView.toDomain(req.body);
+  userService.create(user);
   res.redirect("/users");
 };
 
