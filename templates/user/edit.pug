@@ -11,20 +11,20 @@ block content
     h1= title
     hr
 
-    form(action="/users/1?_method=PUT", method="POST")
+    form(action=`/users/${user.identifier().value()}?_method=PUT`, method="POST")
       input(type="hidden", name="_csrf" value=csrfToken)
       div.form-row
         div.form-group.col-md-4
           label(for="inputUserName") Name
-          input#inputUserName.form-control(type="text", name="userName")
+          input#inputUserName.form-control(type="text" name="userName" value=`${user.fullName()}`)
       div.form-row
         div.form-group.col-md-4
           label(for="inputDateOfBirth") Date of birth
-          input#inputDateOfBirth.form-control(type="date", name="dateOfBirth")
+          input#inputDateOfBirth.form-control(type="date" name="dateOfBirth" value=`${user.dateOfBirth().value()}`)
       div.form-row
         div.form-group.col-md-4
           label(for="inputOrganization") Organization
-          input#inputOrganization.form-control(type="text", name="organization")
+          input#inputOrganization.form-control(type="text" name="organization" value=`${user.organization().value()}`)
 
       div.my-2
         button.btn.btn-primary(type="submit") Save

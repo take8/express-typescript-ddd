@@ -25,28 +25,18 @@ block content
             th 組織
             th 
         tbody
-          tr
-            td 1,001
-            td 山田太郎
-            td 1999-11-22
-            td A社
-            td 
-              a.btn.btn-secondary(href="/users/1").mr-1 Show
-              a.btn.btn-info(href="/users/1/edit").mr-1 Edit
-              form(action="/users/1?_method=DELETE", method="POST")
-                input(type="hidden", name="_csrf" value=csrfToken)
-                button.btn.btn-danger(type="submit") Delete
-          tr
-            td 1,002
-            td 鈴木次郎
-            td 2001-04-30
-            td B社
-            td 
-              a.btn.btn-secondary(href="/users/2").mr-1 Show
-              a.btn.btn-info(href="/users/2/edit").mr-1 Edit
-              form(action="/users/2?_method=DELETE", method="POST")
-                input(type="hidden", name="_csrf" value=csrfToken)
-                button.btn.btn-danger(type="submit") Delete
+          each user in userList.values()
+            tr
+              td #{user.identifier().value()}
+              td #{user.fullName()}
+              td #{user.dateOfBirth().value()}
+              td #{user.organization().value()}
+              td 
+                a.btn.btn-secondary(href=`/users/${user.identifier().value()}`).mr-1 Show
+                a.btn.btn-info(href=`/users/${user.identifier().value()}/edit`).mr-1 Edit
+                form(action=`/users/${user.identifier().value()}?_method=DELETE`, method="POST")
+                  input(type="hidden", name="_csrf" value=csrfToken)
+                  button.btn.btn-danger(type="submit") Delete
 
     //- TODO: tableタグを使わないようにしたい
     //- //- divは省略可能

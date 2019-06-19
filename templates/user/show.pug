@@ -16,15 +16,15 @@ block content
       div.form-row
         div.form-group.col-md-4
           label(for="inputUserName") Name
-          input#inputUserName.form-control(type="text", name="userName" disabled)
+          input#inputUserName.form-control(type="text" name="userName" disabled value=`${user.fullName()}`)
       div.form-row
         div.form-group.col-md-4
           label(for="inputDateOfBirth") Date of birth
-          input#inputDateOfBirth.form-control(type="date", name="dateOfBirth" disabled)
+          input#inputDateOfBirth.form-control(type="date" name="dateOfBirth" disabled value=`${user.dateOfBirth().value()}`)
       div.form-row
         div.form-group.col-md-4
           label(for="inputOrganization") Organization
-          input#inputOrganization.form-control(type="text", name="organization" disabled)
+          input#inputOrganization.form-control(type="text" name="organization" disabled value=`${user.organization().value()}`)
 
       //- div.my-2
       //-   button.btn.btn-primary(type="submit") Save
