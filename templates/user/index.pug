@@ -27,14 +27,14 @@ block content
         tbody
           each user in userList.values()
             tr
-              td #{user.identifier().value()}
-              td #{user.fullName()}
-              td #{user.dateOfBirth().value()}
-              td #{user.organization().value()}
-              td 
+              td.align-middle #{user.identifier().value()}
+              td.align-middle #{user.fullName()}
+              td.align-middle #{user.dateOfBirth().value()}
+              td.align-middle #{user.organization().value()}
+              td.align-middle 
                 a.btn.btn-secondary(href=`/users/${user.identifier().value()}`).mr-1 Show
                 a.btn.btn-info(href=`/users/${user.identifier().value()}/edit`).mr-1 Edit
-                form(action=`/users/${user.identifier().value()}?_method=DELETE`, method="POST")
+                form.d-inline(action=`/users/${user.identifier().value()}?_method=DELETE`, method="POST")
                   input(type="hidden", name="_csrf" value=csrfToken)
                   button.btn.btn-danger(type="submit") Delete
 
