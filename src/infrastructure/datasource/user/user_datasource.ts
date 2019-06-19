@@ -15,13 +15,13 @@ class UserDatasource implements UserRepository {
   private dataMap: { [index: string]: User } = {};
 
   constructor() {
-    const user1 = new User(
+    const user1 = User.of(
       new UserFirstName("太郎"),
       new UserLastName("山田"),
       new UserDateOfBirth(moment("1999-11-22").toDate()),
       new UserOrganization("A社")
     );
-    const user2 = new User(
+    const user2 = User.of(
       new UserFirstName("次郎"),
       new UserLastName("鈴木"),
       new UserDateOfBirth(moment("2001-04-30").toDate()),
@@ -44,11 +44,11 @@ class UserDatasource implements UserRepository {
   }
 
   update(user: User): void {
-    throw new Error("Method not implemented.");
+    this.dataMap[user.identifier().value()] = user;
   }
 
   delete(identifier: UserIdentifier): void {
-    throw new Error("Method not implemented.");
+    delete this.dataMap[identifier.value()];
   }
 }
 

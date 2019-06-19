@@ -3,7 +3,7 @@ import UUID from "uuid";
 export class UserIdentifier {
   private _value: string;
 
-  private constructor(_value: string) {
+  constructor(_value: string) {
     this._value = _value;
   }
 

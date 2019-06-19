@@ -13,6 +13,7 @@ block content
 
     form(action="/users", method="POST")
       input(type="hidden", name="_csrf" value=csrfToken)
+      input(type="hidden", name="identifier" value=`${user.identifier().value()}`)
       div.form-row
         div.form-group.col-md-2
           label(for="inputFirstName") FirstName

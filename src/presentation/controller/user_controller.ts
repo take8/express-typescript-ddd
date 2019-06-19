@@ -55,7 +55,9 @@ export let edit = (req: Request, res: Response, next: NextFunction) => {
  * Update user.
  */
 export let update = (req: Request, res: Response, next: NextFunction) => {
-  // TODO:
+  // TODO: validation
+  const user = userView.toDomain(req.body);
+  userService.update(user);
   res.redirect("/users");
 };
 
@@ -63,6 +65,9 @@ export let update = (req: Request, res: Response, next: NextFunction) => {
  * Delete user.
  */
 export let _delete = (req: Request, res: Response, next: NextFunction) => {
-  // TODO:
+  // TODO: validation
+  const id = req.params.id;
+  const identifier = UserIdentifier.of(id);
+  userService.delete(identifier);
   res.redirect("/users");
 };
