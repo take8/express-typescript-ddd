@@ -3,9 +3,12 @@
 /**
  * Module dependencies.
  */
-const app = require("./app");
-const debug = require("debug")("express-ts-ddd:server");
+import app from "./app";
+// const debug = require("debug")("express-ts-ddd:server");
+import debug from "debug";
 import http from "http";
+
+debug("express-ts-ddd:server");
 
 /**
  * Get port from environment and store in Express.

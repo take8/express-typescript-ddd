@@ -13,67 +13,82 @@ import logger from "./infrastructure/logging/logger";
 import methodOverride from "method-override"; // ルーティングの前に読み込む
 import routes from "./presentation/routes";
 
-const app = express();
+class App {
+  public express: express.Application = express();
 
-// view engine setup
-app.set("views", path.join(__dirname, "../templates"));
-app.set("view engine", "pug");
+  constructor() {
+    this.initMiddleware();
+    this.initRouter();
+    this.initErrorHandler();
+  }
 
-// logger
-// app.use(logger("dev"));
+  private initMiddleware() {
+    // view engine setup
+    this.express.set("views", path.join(__dirname, "../templates"));
+    this.express.set("view engine", "pug");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+    // logger
+    // this.express.use(logger("dev"));
 
-// CSRF prevention
-app.use(cookieParser());
-app.use(session({
-  resave: false,
-  saveUninitialized: false,
-  secret: "secret"
-}));
-app.use(csrf());
-app.use((req, res, next) => {
-  res.locals.csrfToken = req.csrfToken();
-  next();
-});
+    this.express.use(express.json());
+    this.express.use(express.urlencoded({ extended: false }));
 
-// static files
-app.use(express.static(path.join(__dirname, "public")));
-// Access to node_modules
-// TODO: Danger?
-app.use("/node_modules", express.static(path.join(__dirname, "../node_modules")));
+    // CSRF prevention
+    this.express.use(cookieParser());
+    this.express.use(session({
+      resave: false,
+      saveUninitialized: false,
+      secret: "secret"
+    }));
+    this.express.use(csrf());
+    this.express.use((req, res, next) => {
+      res.locals.csrfToken = req.csrfToken();
+      next();
+    });
 
-// routing
-app.use(methodOverride("_method"));
-app.use("/", routes);
+    // static files
+    this.express.use(express.static(path.join(__dirname, "public")));
+    // Access to node_modules
+    // TODO: Danger?
+    this.express.use("/node_modules", express.static(path.join(__dirname, "../node_modules")));
+  }
 
-// catch 404 and forward to error handler
-app.use(function (
-  req: express.Request,
-  res: express.Response,
-  next: express.NextFunction
-) {
-  logger.error("Error 404");
-  next(createError(404));
-});
+  private initRouter() {
+    // routing
+    this.express.use(methodOverride("_method"));
+    this.express.use("/", routes);
+  }
 
-// error handler
-app.use(function (
-  err: any,
-  req: express.Request,
-  res: express.Response,
-  next: express.NextFunction
-) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
+  private initErrorHandler() {
+    // catch 404 and forward to error handler
+    this.express.use(function (
+      req: express.Request,
+      res: express.Response,
+      next: express.NextFunction
+    ) {
+      logger.error("Error 404");
+      // next(createError(404));
+      res.send(createError(404));
+    });
 
-  // render the error page
-  const status = err.status || 500;
-  res.status(status);
-  logger.error("Error " + status);
-  res.render("error");
-});
+    // error handler
+    this.express.use(function (
+      err: any,
+      req: express.Request,
+      res: express.Response,
+      next: express.NextFunction
+    ) {
+      // set locals, only providing error in development
+      res.locals.message = err.message;
+      res.locals.error = req.app.get("env") === "development" ? err : {};
 
-module.exports = app;
+      // render the error page
+      const status = err.status || 500;
+      res.status(status);
+      logger.error("Error " + status);
+      res.render("error");
+    });
+  }
+}
+
+export default new App().express;
