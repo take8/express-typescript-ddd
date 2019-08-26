@@ -33,6 +33,10 @@ Node.js + Express のサーバ構築の際に DDD で実装したいと思い、
 
 ```sh
 npm install
+
+# development
+npm run serve-ts
+# production
 npm run build && npm start
 ```
 
