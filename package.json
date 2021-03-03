@@ -33,7 +33,7 @@
     "moment": "^2.24.0",
     "morgan": "~1.9.0",
     "popper.js": "^1.15.0",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
