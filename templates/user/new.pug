@@ -14,20 +14,20 @@ block content
     form(action="/users", method="POST")
       input(type="hidden", name="_csrf" value=csrfToken)
       input(type="hidden", name="identifier" value=`${user.identifier().value()}`)
-      div.form-row
-        div.form-group.col-md-2
-          label(for="inputFirstName") FirstName
+      div.row.mb-3
+        div.col-md-2
+          label.form-label(for="inputFirstName") FirstName
           input#inputFirstName.form-control(type="text", name="firstName")
-        div.form-group.col-md-2
-          label(for="inputLastName") LastName
+        div.col-md-2
+          label.form-label(for="inputLastName") LastName
           input#inputLastName.form-control(type="text", name="lastName")
-      div.form-row
-        div.form-group.col-md-4
-          label(for="inputDateOfBirth") Date of birth
+      div.row.mb-3
+        div.col-md-4
+          label.form-label(for="inputDateOfBirth") Date of birth
           input#inputDateOfBirth.form-control(type="date", name="dateOfBirth")
-      div.form-row
-        div.form-group.col-md-4
-          label(for="inputOrganization") Organization
+      div.row.mb-3
+        div.col-md-4
+          label.form-label(for="inputOrganization") Organization
           input#inputOrganization.form-control(type="text", name="organization")
 
       div.my-2
