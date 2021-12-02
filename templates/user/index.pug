@@ -32,8 +32,8 @@ block content
               td.align-middle #{user.dateOfBirth().value()}
               td.align-middle #{user.organization().value()}
               td.align-middle 
-                a.btn.btn-secondary(href=`/users/${user.identifier().value()}`).mr-1 Show
-                a.btn.btn-info(href=`/users/${user.identifier().value()}/edit`).mr-1 Edit
+                a.btn.btn-secondary(href=`/users/${user.identifier().value()}`).me-1 Show
+                a.btn.btn-info(href=`/users/${user.identifier().value()}/edit`).me-1 Edit
                 form.d-inline(action=`/users/${user.identifier().value()}?_method=DELETE`, method="POST")
                   input(type="hidden", name="_csrf" value=csrfToken)
                   button.btn.btn-danger(type="submit") Delete
@@ -51,12 +51,12 @@ block content
     //-     .col-3 1999-11-22
     //-     .col-3 A company
     //-     .col-3
-    //-       a.btn.btn-info(href="#").mr-1 Edit
+    //-       a.btn.btn-info(href="#").me-1 Edit
     //-       a.btn.btn-danger(href="#") Delete
     //-   .row.c-table-row
     //-     .col-3 Yamada Taro
     //-     .col-3 1999-11-22
     //-     .col-3 A company
     //-     .col-3
-    //-       a.btn.btn-info(href="#").mr-1 Edit
+    //-       a.btn.btn-info(href="#").me-1 Edit
     //-       a.btn.btn-danger(href="#") Delete
