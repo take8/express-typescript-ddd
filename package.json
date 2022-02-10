@@ -51,7 +51,7 @@
     "@types/shelljs": "^0.8.5",
     "@types/uuid": "^3.4.4",
     "jest": "^24.8.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.19.1",
     "shelljs": "^0.8.3",
     "ts-jest": "^24.0.2",
