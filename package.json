@@ -30,7 +30,7 @@
     "http-errors": "~1.6.2",
     "log4js": "^4.3.1",
     "method-override": "^3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "morgan": "~1.9.0",
     "pug": "^3.0.2",
     "uuid": "^3.3.2"
